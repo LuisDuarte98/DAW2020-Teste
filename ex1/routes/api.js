@@ -23,7 +23,7 @@ router.get('/batismos/batisado', (req,res) => {
 
 // GET /api/batismos/stats - Devolve uma lista de pares, ano e número de batismos nesse ano
 router.get('/batismos/stats', (req,res) => {
-    batismoController.stats()
+    batismoController.listStats()
             .then(data => res.json(data))
             .catch(err => res.status(500).jsonp(err))
 })
@@ -42,13 +42,6 @@ router.get('/batismos/:id', (req,res) => {
         .then(data => res.json(data))
         .catch(err => res.status(500).jsonp(err))
 })
-
-/*
-// GET /api/batismos - Devolve a lista dos batismos, com os campos: _id, date, title e ref;
-router.get('/api/batismos/stats', (req, res) => {
-
-})
-*/
 
 // GET /api/batismos?ano=YYYY - Devolve a lista de batismos realizados no ano YYYY;
 router.get('/batismos', (req,res) => {

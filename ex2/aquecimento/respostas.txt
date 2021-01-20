@@ -11,6 +11,4 @@ Aquecimento:
 1: 842
    ficheiro 1.json
 
-2: 637
-
-3: 842
+2: 

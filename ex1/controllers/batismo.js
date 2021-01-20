@@ -25,13 +25,14 @@ module.exports.findByYear = (year) => {
             .exec()
 }
 
-/*
-module.exports.listYear = () => {
+
+module.exports.listStats = () => {
     return Batismo
-            .distinct('date')
-            .exec()
+            .aggregate([
+                { $group: { _id: {$substr: [ "$date",0, 4]} , nr_batizados: { $sum: 1 } } }
+            ])
 }
-*/
+
 
 module.exports.listProgenitores = () => {
     return Batismo
