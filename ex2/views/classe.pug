@@ -11,10 +11,10 @@ block content
               th Status
       tbody
             tr
-                th=classe.codigo
-                th=classe.titulo
-                th=classe.descricao
-                th=classe.status
+                td=classe.codigo
+                td=classe.titulo
+                td=classe.descricao
+                td=classe.status
   if (classe.filhos.length > 0)
     h2 Descendencia:
     table
@@ -27,10 +27,10 @@ block content
       tbody
             for f in classe.filhos
                 tr
-                    th 
+                    td 
                         a(href="/classes/c" + f.codigo)= f.codigo
-                    th=f.titulo
-                    th=f.descricao
-                    th=f.status
+                    td=f.titulo
+                    td=f.descricao
+                    td=f.status
   a(href=('/'))
     p Voltar Home

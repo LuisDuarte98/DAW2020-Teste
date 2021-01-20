@@ -11,10 +11,10 @@ block content
     tbody
         for t in termos
             tr
-                th=t.termo
-                th 
+                td=t.termo
+                td 
                     a(href="/classes/" + t.codigoClasse)= t.idClasse
-                th 
+                td 
                     a(href="/classes/" + t.codigoClasse)= t.tituloClasse
   a(href=('/'))
     p Voltar à Home
