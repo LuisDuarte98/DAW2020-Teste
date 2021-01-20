@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Página dos termos de índice
+  table
+    thead
+        tr
+            th Termo
+            th ID Classe
+            th Titulo Classe
+    tbody
+        for t in termos
+            tr
+                th=t.termo
+                th 
+                    a(href="/" + t.codigoClasse)= t.idClasse
+                th 
+                    a(href="/" + t.codigoClasse)= t.tituloClasse
+  a(href=('/'))
+    p Voltar Home

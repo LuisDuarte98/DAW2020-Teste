@@ -8,7 +8,11 @@ Pedido de token:
 
 Aquecimento:
 
-1: 842
-   ficheiro 1.json
+1: 2
+   ficheiro: 1.json
 
-2: 
+2: 637
+
+3: 8
+
+4: 5

@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Página inicial
+  p  Bem-vindo, pode escolher entre duas opções, aceder á página de classes de nivel 1, e outra que lista os termos de índices ;)
+  ul 
+    li
+      a(href="/classes") Classes
+    li
+      a(href="/termos") Termos de índice
+
