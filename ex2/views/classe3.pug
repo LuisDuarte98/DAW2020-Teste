@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1 Classe de nivel #{classe.nivel}
+  table
+      thead
+          tr
+              th Codigo
+              th Titulo
+              th Descricao
+              th Status
+      tbody
+            tr
+                th=classe.codigo
+                th=classe.titulo
+                th=classe.descricao
+                th=classe.status
+  if (classe.filhos.length > 0)
+    h2 Descendencia:
+    table
+      thead
+          tr
+              th Codigo
+              th Titulo
+              th Descricao
+              th Status
+      tbody
+            for f in classe.filhos
+                tr
+                    th 
+                        a(href="/classes/c" + f.codigo)= f.codigo
+                    th=f.titulo
+                    th=f.descricao
+                    th=f.status
+  a(href=('/'))
+    p Voltar Home

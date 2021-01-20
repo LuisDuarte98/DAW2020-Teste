@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Página das classes de nível 1
+  table
+    thead
+        th Código
+        th Título
+    tbody
+        for c in classes
+            tr 
+                th 
+                    a(href="/classes/c" + c.codigo)= c.codigo
+                th 
+                    a(href="/classes/c" + c.codigo)= c.titulo
+  a(href=('/'))
+    p Voltar à Home
