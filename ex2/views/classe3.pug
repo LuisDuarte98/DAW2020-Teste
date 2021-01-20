@@ -32,5 +32,18 @@ block content
                     th=f.titulo
                     th=f.descricao
                     th=f.status
+  if (classe.termosInd.length > 0)
+    h2 Termos de indíce:
+    table
+      thead
+          tr
+              th Id
+              th Termo
+      tbody
+            for t in classe.termosInd
+                tr
+                    th 
+                        a(href="/termos")= t.idTI                    
+                    th=t.termo
   a(href=('/'))
     p Voltar Home

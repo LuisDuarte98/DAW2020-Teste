@@ -8,7 +8,7 @@ var token = ""
 // Obter token no arranque da aplicação ==> Pode conter algum delay =(
 axios.post('http://clav-api.di.uminho.pt/v2//users/login',{username: "daw2020@teste.uminho.pt", password: "232"})
     .then((res) => {
-        console.log('Obtive com sucesso',res.data.token);
+        console.log('Obtive com sucesso o token = ',res.data.token);
         token = res.data.token;
     })
     .catch((err) => {
@@ -37,18 +37,15 @@ router.get('/classes/:id', function(req, res, next) {
     .then(result => {
         const nivel = result.data.nivel
         if (nivel == 3){
-            /*
-            axios.get('http://clav-api.di.uminho.pt/v2/classes/c' + req.params.id + '/procRel' + '?token=' + token)
-                .then(relacionados => {
+            axios.get('http://clav-api.di.uminho.pt/v2/classes/' + req.params.id + '?token=' + token)
+                .then(result => {
                     res.render('classe3', { 
                         classe: result.data,
-                        relacionados: relacionados.data,
                     })
                 })
                 .catch(error => {
                     res.render('error', { error: error })
                 })
-            */
         }
         else{
             res.render('classe', { 
